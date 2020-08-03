@@ -20,6 +20,8 @@ jobs:
         run: |-
           sudo timedatectl set-timezone Asia/Shanghai
           npm install
+          git submodule update --init --recursive
+          cd sync && npm install && cd ..
           npm run sync
       - name: Commit and push
         run: |-
