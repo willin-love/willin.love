@@ -26,5 +26,5 @@ jobs:
       - name: Commit and push
         run: |-
           git config --global user.email "bot@github.com" && git config --global user.name "Bot"
-          git add . && git commit -m ":memo: 新增关注并更新" || exit 0
+          git add . && git commit -m ":memo: 感谢 $GITHUB_ACTOR 的关注，触发了更新" || exit 0
           git push
