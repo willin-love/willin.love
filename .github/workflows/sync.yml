@@ -7,7 +7,7 @@ on:
   #   - cron: '0 */4 * * *'
 
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,9 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
-      - name: Fetch events
+      - name: Sync Data
+        env:
+          TODOIST_TOKEN: ${{ secrets.TODOIST_TOKEN }}
         run: |-
           sudo timedatectl set-timezone Asia/Shanghai
           npm install
@@ -26,5 +28,5 @@ jobs:
       - name: Commit and push
         run: |-
           git config --global user.email "bot@github.com" && git config --global user.name "Bot"
-          git add . && git commit -m ":memo: 感谢 $GITHUB_ACTOR 的关注，触发了更新" || exit 0
+          git add . && git commit -m ":memo: Thanks for $GITHUB_ACTOR's star" || exit 0
           git push

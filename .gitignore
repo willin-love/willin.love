@@ -1,5 +1,6 @@
 .DS_Store
 assets/data/
+package-lock.json
 
 # Logs
 logs
