@@ -1,0 +1,3 @@
+[submodule "sync"]
+	path = sync
+	url = git@github.com:willin-love/todoist-sync.git
