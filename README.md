@@ -1,6 +1,6 @@
 # Willin.Love
 
-[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![Build Status](https://travis-ci.org/willin-love/willin.love.svg?branch=master)](https://travis-ci.org/willin-love/willin.love) ![Update](https://github.com/willin-love/willin.love/workflows/Update/badge.svg?branch=master)
+[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![Build Status](https://travis-ci.org/willin-love/willin.love.svg?branch=master)](https://travis-ci.org/willin-love/willin.love) ![sync](https://github.com/willin-love/willin.love/workflows/sync/badge.svg?branch=master)
 
 ## LICENSE
 
