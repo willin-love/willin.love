@@ -2,6 +2,15 @@
 
 [![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![Build Status](https://travis-ci.org/willin-love/willin.love.svg?branch=master)](https://travis-ci.org/willin-love/willin.love) ![sync](https://github.com/willin-love/willin.love/workflows/sync/badge.svg?branch=master)
 
+## Dev
+
+```bash
+yarn
+git submodule update --init --recursive
+cd sync && yarn && cd ..
+yarn sync
+```
+
 ## LICENSE
 
 Apache-2.0

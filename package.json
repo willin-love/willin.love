@@ -42,6 +42,8 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "stylelint": "^13.6.1",
@@ -67,21 +69,6 @@
       "test/**/*.js",
       "!**/_*/*.js",
       "!**/_*.js"
-    ]
-  },
-  "nyc": {
-    "lines": 80,
-    "check-coverage": true,
-    "reporter": [
-      "lcov",
-      "html"
-    ],
-    "report-dir": "./.nyc_output",
-    "exclude": [
-      "test",
-      "test{,-*}.js",
-      "**/*.test.js",
-      "**/__tests__/**"
     ]
   }
 }

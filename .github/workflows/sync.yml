@@ -16,17 +16,27 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - name: Sync Data
         env:
           TODOIST_TOKEN: ${{ secrets.TODOIST_TOKEN }}
         run: |-
           sudo timedatectl set-timezone Asia/Shanghai
-          npm install
+          yarn
           git submodule update --init --recursive
-          cd sync && npm install && cd ..
-          npm run sync
-      - name: Commit and push
+          cd sync && yarn && cd ..
+          yarn sync
+      - name: Generate Static
         run: |-
-          git config --global user.email "bot@github.com" && git config --global user.name "Bot"
+          yarn generate
+          cd dist/
+          git init
+          git remote add origin git@github.com:willin-love/willin-love.github.io.git
           git add . && git commit -m ":memo: Thanks for $GITHUB_ACTOR's star" || exit 0
-          git push
+          git push -f origin master
