@@ -36,11 +36,12 @@ jobs:
           cd sync && yarn && cd ..
           yarn sync
       - name: Generate Static
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |-
           yarn generate
           cd dist/
           git init
-          git remote add origin git@github.com:willin-love/willin-love.github.io.git
           git config --global user.email "bot@github.com" && git config --global user.name "Bot"
           git add . && git commit -m ":memo: Thanks for $GITHUB_ACTOR's star" || exit 0
-          git push -f origin master
+          git push -f "https://${GH_TOKEN}@github.com/willin-love/willin-love.github.io.git" master:master
