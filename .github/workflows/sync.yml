@@ -37,7 +37,7 @@ jobs:
           yarn sync
       - name: Generate Static
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |-
           yarn generate
           cd dist/
